@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>COVID - 19</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cstyle.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h3>Predict Severity of Corona Virus</h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age>60" placeholder="Age>60 Yes - 1 No - 0" required="required" />
+        <input type="text" name="Previous_Chronic_Disease" placeholder="Previous Chronic Disease Yes - 1 No - 0" required="required" />
+		<input type="text" name="Fever" placeholder="Fever Yes - 1 No - 0" required="required" />
+		<input type="text" name="Dry_Cough" placeholder="Dry Cough Yes - 1 No - 0" required="required" />
+		<input type="text" name="Fatigue" placeholder="Fatigue Yes - 1 No - 0" required="required" />
+		<input type="text" name="Mucus_in_Throat" placeholder="Mucus in Throat Yes - 1 No - 0" required="required" />
+		<input type="text" name="Breathing_Problem" placeholder="Breathing Problem Yes - 1 No - 0" required="required" />
+		<input type="text" name="Joint/Muscle_Pain" placeholder="Joint/Muscle Pain Yes - 1 No - 0" required="required" />
+		<input type="text" name="Sore_Throat" placeholder="Sore Throat Yes - 1 No - 0" required="required" />
+		<input type="text" name="Headache" placeholder="Headache Yes - 1 No - 0" required="required" />
+		<input type="text" name="Shivering" placeholder="Shivering Yes - 1 No - 0" required="required" />
+        <p>1 - Low Severity 2 - Medium Severity</p>     
+        <p>3 - High Severity </p>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
+
+
