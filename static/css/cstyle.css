@@ -18,9 +18,9 @@ body {
 	height:100%;
 	font-family: 'Open Sans', sans-serif;
 	background: #092756;
-	color: #fff;
+	color: #000000;
 	font-size: 18px;
-	text-align:center;
+	text-align:left;
 	letter-spacing:1.2px;
 	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
 	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
@@ -30,26 +30,29 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 
 }
+
 .login { 
 	position: absolute;
 	top: 20%;
-	left: 45%;
+	left: 15%;
 	margin: -150px 0 0 -150px;
-	width:400px;
+	width:1000px;
 	height:400px;
 }
 
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
 input { 
-	width: 70%; 
+	width: 30%; 
 	margin-bottom: 10px; 
 	background: rgba(0,0,0,0.3);
 	border: none;
 	outline: none;
+	text-align: center;
 	padding: 6px;
 	font-size: 13px;
 	color: #fff;
+	style="margin-left:3em";
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 	border: 1px solid rgba(0,0,0,0.3);
 	border-radius: 4px;
