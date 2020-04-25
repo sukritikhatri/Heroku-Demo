@@ -9,6 +9,7 @@ model = pickle.load(open('cdata.pkl', 'rb'))
 def home():
     return render_template('cindex.html')
 
+
 @app.route('/predict',methods=['POST'])
 def predict():
     '''
@@ -20,7 +21,7 @@ def predict():
 
     output = round(prediction[0])
 
-    return render_template('cindex.html', prediction_text='Your chances of CoronaVirus is : {}'.format(output))
+    return render_template('advisory.html', prediction_text='Your CoronaVirus risk level is : {}'.format(output))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
