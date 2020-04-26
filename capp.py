@@ -21,7 +21,7 @@ def predict():
 
     output = round(prediction[0])
 
-    return render_template('advisory.html', prediction_text='Your CoronaVirus risk level is : {}'.format(output))
+    return render_template('advisory.html', prediction_text='Your CoronaVirus Risk Level is : {}'.format(output))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
