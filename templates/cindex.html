@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
-<head>
+<title>COVID - 19</title>
 <meta charset="UTF-8">
-  <title>COVID - 19</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/cstyle.css') }}">
-  
-</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cstyle.css') }}">  
+
+
 
 <body>
  <div class="login">
-	<h2 align="center"> <font color="white"> &ensp;&ensp;&ensp;<u>Predicting severity of CoronaVirus</u> [According to WHO Report on COVID-19] </font></h2>  
-
-     <!-- Main Input For Receiving Query to our ML -->
+ <br>
+ 
+	<h2 align="center"> <font color="white"> &ensp;&ensp;&ensp;<u>Predicting Severity of CoronaVirus</u> [According to WHO Report on COVID-19] </font></h2>  
+<br>
     <form action="{{ url_for('predict')}}"method="post">
-        <label for="Age>60" >Is your Age above 60?&nbsp;&nbsp;&ensp;&nbsp;&nbsp;&ensp;&nbsp;&ensp;&ensp;&ensp;&nbsp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp</label>
-        <input type="text" name="Age>60" placeholder="Yes - 1 No - 0" required="required" /><br>
-    	<label for="Previous_Chronic_Disease">Do you have any previous Chronic Disease?&nbsp;&nbsp;</label> 
-        <input type="text" name="Previous_Chronic_Disease" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Fever">Do you have Fever?&nbsp;&ensp;&ensp;&ensp;&ensp;&nbsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
-		<input type="text" name="Fever" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Dry_Cough">Are you having Dry Cough?&nbsp&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
-		<input type="text" name="Dry_Cough" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Fatigue">Are you feeling Fatigue?&ensp;&ensp;&nbsp&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
-		<input type="text" name="Fatigue" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Mucus_in_Throat ">Do you have Mucus in your Throat?&nbsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;</label>
-		<input type="text" name="Mucus_in_Throat" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Breathing_Problem">Are you experiencing Breathing Problems?&nbsp;&ensp;</label>
-		<input type="text" name="Breathing_Problem" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Joint/Muscle_Pain">Are you suffering from Joint/Muscle Pain?&ensp;&ensp;&nbsp;</label>
-		<input type="text" name="Joint/Muscle_Pain" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Sore_Throat ">Are you feeling Sore Throat?&nbsp;&nbsp&nbsp&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
-		<input type="text" name="Sore_Throat" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Headache">Do you have Headache?&nbsp;&nbsp&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;</label>
-		<input type="text" name="Headache" placeholder="Yes - 1 No - 0" required="required" /><br>
-		<label for="Shivering">Are you Shivering?&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&ensp;&nbsp;&ensp;&nbsp;&nbsp</label>
-		<input type="text" name="Shivering" placeholder="Yes - 1 No - 0" required="required" />
-        
+    <div>
+        <label for="Age>60" >Is your Age above 60?</label>
+        <input type="text" name="Age>60" placeholder="Yes - 1 No - 0" required="required">  
+    	<label for="Previous_Chronic_Disease">Do you have any previous Chronic Disease?</label> 
+        <input type="text" name="Previous_Chronic_Disease" placeholder="Yes - 1 No - 0" required="required" >
+		<label for="Fever">Do you have Fever?</label>
+		<input type="text" name="Fever" placeholder="Yes - 1 No - 0" required="required">
+		<label for="Dry_Cough">Are you having Dry Cough?</label>
+		<input type="text" name="Dry_Cough" placeholder="Yes - 1 No - 0" required="required">
+		<label for="Fatigue">Are you feeling Fatigue?</label>
+		<input type="text" name="Fatigue" placeholder="Yes - 1 No - 0" required="required">
+		<label for="Mucus_in_Throat ">Do you have Mucus in your Throat?</label>
+		<input type="text" name="Mucus_in_Throat" placeholder="Yes - 1 No - 0" required="required">
+		<label for="Breathing_Problem">Are you experiencing Breathing Problem?</label>
+		<input type="text" name="Breathing_Problem" placeholder="Yes - 1 No - 0" required="required">
+		<label for="Joint/Muscle_Pain">Are you suffering from Joint/Muscle Pain?</label>
+		<input type="text" name="Joint/Muscle_Pain" placeholder="Yes - 1 No - 0" required="required">
+		<label for="Sore_Throat ">Are you feeling Sore Throat?</label>
+		<input type="text" name="Sore_Throat" placeholder="Yes - 1 No - 0" required="required">
+		<label for="Headache">Do you have Headache?</label>
+		<input type="text" name="Headache" placeholder="Yes - 1 No - 0" required="required">
+		<label for="Shivering">Are you Shivering?</label>
+		<input type="text" name="Shivering" placeholder="Yes - 1 No - 0" required="required">
+		</div>
+
         <button type="submit" class="btn btn-primary btn-block btn-large"> <font color="black">Submit</button>
-    </form>
-    
-    <h3 align="center"> {{ prediction_text }} </h3>
-   
+
+    </form>   
 
  </div>
 
 
 </body>
 </html>
+
 
